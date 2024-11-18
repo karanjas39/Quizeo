@@ -1,0 +1,154 @@
+@import "./_style.scss";
+
+.create-quiz {
+  > div {
+    width: 80%;
+    margin: 20px auto;
+
+    > h2 {
+      font-size: 32px;
+      text-align: center;
+      color: $main;
+    }
+    > form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 70%;
+      margin: 0 auto;
+      .btns {
+        align-self: flex-end;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        > label {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        input,
+        textarea,
+        select {
+          padding: 10px;
+          border: none;
+          outline: none;
+          background-color: #fff;
+          border-radius: 10px;
+          resize: none;
+        }
+      }
+      > .mcq-container {
+        > div {
+          display: flex;
+          justify-content: space-between;
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            p {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+            .correct {
+              color: $main;
+              font-weight: bold;
+            }
+          }
+          > h2 {
+            font-size: 18px;
+          }
+          > p {
+            cursor: pointer;
+          }
+        }
+        > .mcq-created-list {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          div {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            > h3 {
+              font-size: 16px;
+              text-align: start;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mcqForm {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px !important;
+  border-left: solid 5px $main;
+  padding-left: 10px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    > label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    input {
+      padding: 10px;
+      border: none;
+      outline: none;
+      background-color: #fff;
+      border-radius: 10px;
+      resize: none;
+    }
+    > p {
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .correctans {
+      > svg {
+        color: $main;
+      }
+    }
+  }
+  input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: "786px") {
+  .create-quiz {
+    > div {
+      width: 80%;
+      form {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+  .mcqForm {
+    width: 100%;
+    > div {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      flex-direction: row;
+      &:first-of-type {
+        flex-direction: column;
+      }
+    }
+    > .btns {
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+  }
+}
